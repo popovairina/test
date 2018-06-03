@@ -1,0 +1,118 @@
+@import 'variables'
+
+body
+	margin: 0
+	font-family: "Roboto", sans-serif
+	font-weight: 400
+	font-size: 14px
+	color: $text-color-grey
+*
+	box-sizing: border-box
+button, input
+	outline: none
+	border: none
+
+
+.wrap
+	margin: 15px auto
+	width: 651px
+	height: 600px
+	background: $bg-header url(../img/bg-dialogue.png) 88% 56% no-repeat
+	box-shadow: 0px 20px 30px rgba(0, 0, 0, 0.15)
+.chat
+	padding: 20px 41px 30px 20px
+	border-bottom: 1px solid $line
+	overflow-y: scroll
+	max-height: 360px
+	&-date
+		position: relative
+		margin-bottom: 20px
+		text-align: center
+		color: $text-color-dark
+		&::before
+			content: ''
+			display: block
+			position: absolute
+			left: -20px
+			top: 50%
+			width: 240px
+			height: 1px
+			background-color: $line
+		&::after
+			content: ''
+			display: block
+			position: absolute
+			right: -41px
+			top: 50%
+			width: 264px
+			height: 1px
+			background-color: $line
+	&-message
+		display: flex
+		margin-bottom: 20px
+		&--right
+			justify-content: flex-start
+			flex-direction: row-reverse
+		&__img
+			background: url(../img/user-photo.png) center no-repeat
+			background-size: cover
+			width: 41px
+			height: 41px
+		&__text
+			position: relative
+			padding: 10px 15px
+			margin-left: 20px
+			margin-right: 20px
+			max-width: 470px
+			border-radius: 5px
+			background-color: $bg-msg
+			color: $text-color-dark
+			line-height: 1.7
+			&::before
+				content: ''
+				display: block
+				position: absolute
+				width: 0
+				height: 0
+				top: 7px
+				$w: 7
+				border-top: #{$w}px solid $bg-msg
+				border-left: #{$w}px solid transparent
+				border-right: #{$w}px solid transparent
+			&--left
+				&::before
+					left: -7px
+			&--right
+				&::before
+					right: -7px
+.new-message-form
+	display: flex
+	flex-direction: column
+	padding: 20px 41px 30px 20px
+	&__input
+		position: relative
+		padding: 10px
+		padding-bottom: 100px
+		margin-bottom: 20px
+		min-height: 129px
+		border-radius: 4px
+		font-family: "Noto Sans", sans-serif
+		font-weight: 400
+		font-size: 14px
+		color: $text-color-grey
+		&::placeholder
+			height: 100%
+
+	&__button
+		padding: 10px 22px
+		width: 144px
+		border-radius: 20px
+		background-color: $btn
+		font-family: "Proxima Nova", sans-serif
+		font-size: 16px
+		font-weight: bold
+		color: $text-color-light
+		transition: all .3s ease
+		&:hover
+			cursor: pointer
+			background-color: lighten($btn,3%)
